@@ -1,23 +1,9 @@
-# FIXM 4.1 Implementation
-### What is FIXM(Flight Information eXchange Model)?
-The Flight Information Exchange Model (FIXM) is an exchange model capturing Flight and Flow information that is globally standardised. The requirement for FIXM was identified by the International Civil Aviation Organisation (ICAO) Air Traffic Management Requirements and Performance Panel (ATMRPP) and endorsed at the 12th Air Navigation Conference as part of the Aviation System Block Upgrades (ASBU) and as described in Flight and Flow Information for a Collaborative Environment (FF-ICE).
-See https://fixm.aero/
+# FIXM FPL marshaller/unmarshaller
 
-![FIXM](https://fixm.aero/images/fixm_as_ffice_enabler.png "fixm")
+FIXM(Flight Infogmation Exchange Management) is a standard for exchanging Flight Information and is formed as XML(Extendable Markup Language).
+To send and receive FIXM data, user must be convert legacy FPL(Flight Plan) format to FIXM-compliant XML format or vice versa. This module enables developers to convert from TAC(Typical Alphabetic Code) to XML or vice versa.
 
-### What is FIXM 4.1 Implementation?
-FIXM is consists of Core and Extensions. Core has 3 namespaces like followings 
-  - Base
-  - Flight
-  - Messaging
-  
-The Extensions are developed by FIXM users in support of specific regional/local requirements.
- 
-  - US NAS Extension
-  - SESAR EFPL Extension
-  - Eucontrol A-CDM Extension
 
-This FIXM Implementation is Java classes that is implemented from "FIXM Core schema" and "US NAS Extension schema". You can include fixm-4.1.jar library to your application for marshalling/unmarshalling.
 
 ### How to build
 
@@ -26,9 +12,12 @@ $ mvn clean compile
 
 # To package, 
 $ mvn package
+
+# To assembly,
+$ mvn assembly:assembly
 ```
 
 ### License
 
-**Free Software**
+**Free Software, Please remain package name if possible**
 
