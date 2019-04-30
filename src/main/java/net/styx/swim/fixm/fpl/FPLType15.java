@@ -18,10 +18,6 @@ public class FPLType15 implements IFPLType
         // SUVAS UL53 KAROL UL995 KOSEG UM855 MAROS/N0440F380 UM855 KFK UL610
         // DEKEK/N0400F120 DEKEK1C
         //------------------------------------------------------------------
-
-        //if(map.get("ROUTE") == null) return flightType;
-        //System.out.println("Route : " + map.get("ROUTE"));
-
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try
@@ -94,9 +90,7 @@ public class FPLType15 implements IFPLType
             {
                 if(!excludeFix.contains(s)) fixList.add(s);
             }
-            //System.out.println(":: " + fixList);
 
-            //RouteTrajectoryType routeTrajectory = factoryFlight.createRouteTrajectoryType();
             RouteTrajectoryType routeTrajectory = flightType.getFiled();
 
             for(int i=0; i<fixList.size(); i++)
@@ -123,8 +117,6 @@ public class FPLType15 implements IFPLType
                 FlightRouteElementType element = null;
                 int routeType = FIXMUtils.checkRouteType(fix);
 
-                //System.out.println("  :::::::::: " + fix + ", " + routeType);
-
                 element = FIXMUtils.getFlightObjectFactory().createFlightRouteElementType();
 
                 if(routeType == FIXMUtils.ROUTE_DESIGNATOR && fix != null)
@@ -136,8 +128,6 @@ public class FPLType15 implements IFPLType
                 else if(routeType == FIXMUtils.ROUTE_LATLON)
                 {
                     // 50N088W
-
-                    //System.out.println("########### " + fix);
                     boolean needLatNegative = false;
                     boolean needLonNegative = false;
 
@@ -211,8 +201,6 @@ public class FPLType15 implements IFPLType
                         String distance = r_theta.substring(3);
 
                         BearingType bt = FIXMUtils.getBaseObjectFactory().createBearingType();
-                        //ZeroBearingTypeType zbtt = ZeroBearingTypeType.fromValue("MAGNETIC_NORTH");
-                        // or TRUE_NORTH
                         bt.setUom(UomAngleType.fromValue("DEG"));
                         bt.setValue(Double.parseDouble(bearing));
 

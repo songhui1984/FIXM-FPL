@@ -88,7 +88,6 @@ public class FIXMUtils
 
         try
         {
-            //java.io.File file = new java.io.File("fpl.kac.xml");
             StringWriter sw = new StringWriter();
 
             JAXBContext context = JAXBContext.newInstance("aero.fixm.flight._4:aero.fixm.base._4:aero.fixm.messaging._4:aero.faa.nas._4");
@@ -96,7 +95,6 @@ public class FIXMUtils
             JAXBElement<FlightType> element = factoryFlight.createFlight(flightType);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty("jaxb.formatted.output",Boolean.TRUE);
-            //marshaller.marshal(element, System.out);
             marshaller.marshal(element, sw);
 
             return sw.toString();
@@ -118,7 +116,6 @@ public class FIXMUtils
             MessageType mt = factoryMessage.createMessageType();
             mt.setFlight(flightType);
 
-            //java.io.File file = new java.io.File("fpl.kac.xml");
             StringWriter sw = new StringWriter();
 
             JAXBContext context = JAXBContext.newInstance("aero.fixm.flight._4:aero.fixm.base._4:aero.fixm.messaging._4:aero.faa.nas._4");
@@ -126,7 +123,6 @@ public class FIXMUtils
             JAXBElement<MessageType> element = factoryMessage.createMessage(mt);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty("jaxb.formatted.output",Boolean.TRUE);
-            //marshaller.marshal(element, System.out);
             marshaller.marshal(element, sw);
 
             return sw.toString();
@@ -151,7 +147,6 @@ public class FIXMUtils
             MessageCollectionType mct = factoryMessage.createMessageCollectionType();
             mct.getMessage().add(mt);
 
-            //java.io.File file = new java.io.File("fpl.kac.xml");
             StringWriter sw = new StringWriter();
 
             JAXBContext context = JAXBContext.newInstance("aero.fixm.flight._4:aero.fixm.base._4:aero.fixm.messaging._4:aero.faa.nas._4");
@@ -159,7 +154,6 @@ public class FIXMUtils
             JAXBElement<MessageCollectionType> element = factoryMessage.createMessageCollection(mct);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty("jaxb.formatted.output",Boolean.TRUE);
-            //marshaller.marshal(element, System.out);
             marshaller.marshal(element, sw);
 
             return sw.toString();
@@ -232,8 +226,6 @@ public class FIXMUtils
 
     public static Map<String, String> getOtherMap(String other)
     {
-        //if(otherMap != null && otherMap.size() > 0) return otherMap;
-
         Map<String, String> map = new HashMap<String, String>();
 
         Matcher matcher = otherPattern.matcher(other);
@@ -245,7 +237,6 @@ public class FIXMUtils
 
         while(matcher.find())
         {
-            //System.out.println(idx + ": " + matcher.group() + ", " + matcher.start() + ", " + matcher.end());
             int start = matcher.start();
             int end = matcher.end();
             String key = matcher.group();
@@ -296,7 +287,6 @@ public class FIXMUtils
         while(matcher.find())
         {
             String s = matcher.group();
-            //System.out.println("---- Excluded : " + s);
             list.add(s.trim());
         }
 

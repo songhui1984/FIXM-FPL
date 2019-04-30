@@ -20,8 +20,6 @@ public class FPLType13 implements IFPLType
         // -OJAI0430
         //------------------------------------------------------------------
 
-        //if(map.get("DEP") == null && map.get("EOBT") == null) return flightType;
-
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try
@@ -41,9 +39,6 @@ public class FPLType13 implements IFPLType
                 try
                 {
                     XMLGregorianCalendar gc = DatatypeFactory.newInstance().newXMLGregorianCalendarTime(Integer.parseInt(eobt.substring(0, 2)),Integer.parseInt(eobt.substring(2)), 0, DatatypeConstants.FIELD_UNDEFINED);
-//                    gc.setMonth(Integer.parseInt(eobt.substring(0, 2)));
-//                    gc.setDay(Integer.parseInt(eobt.substring(2)));
-
                     departure.setEstimatedOffBlockTime(gc);
                 }
                 catch(Exception e)

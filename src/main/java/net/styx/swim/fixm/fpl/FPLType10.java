@@ -21,7 +21,6 @@ public class FPLType10 implements IFPLType
         // -SDFGIRWYZ/B1L
         //------------------------------------------------------------------
 
-        //if(map.get("EQUIP") == null && map.get("SUR") == null) return flightType;
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try
@@ -29,17 +28,9 @@ public class FPLType10 implements IFPLType
             FlightCapabilitiesType capability = FIXMUtils.getFlightObjectFactory().createFlightCapabilitiesType();
 
             List<String> commCodes = FIXMUtils.getCommCodes();
-            //System.out.println("commCode : " + commCodes);
-
             List<String> datalinkCodes = FIXMUtils.getDatalinkCodes();
-            //System.out.println("datalink code: " + datalinkCodes);
-
             List<String> navCodes = FIXMUtils.getNavCodes();
-            //System.out.println("Navigation code: " + navCodes);
-
             List<String> surveillanceCodes = FIXMUtils.getSurveillanceCodes();
-            //System.out.println("surveillance code: " + surveillanceCodes);
-
             List<String> commList = new ArrayList<String>();
             List<String> datalinkList = new ArrayList<String>();
             List<String> navList = new ArrayList<String>();
@@ -48,8 +39,6 @@ public class FPLType10 implements IFPLType
             boolean isStandard = false;
 
             String value = map.get("EQUIP");
-            //System.out.println("COMNAV ---> " + value);
-
             if(value != null)
             {
                 if(value.trim().contains("S")) isStandard = true;
@@ -66,8 +55,6 @@ public class FPLType10 implements IFPLType
             }
 
             value = map.get("SUR");
-            //System.out.println("SURV --> " + value);
-
             if(value != null)
             {
                 Matcher matcher = FIXMUtils.getComnavPattern().matcher(value);
@@ -134,7 +121,6 @@ public class FPLType10 implements IFPLType
             capability.setSurveillance(surveillance);
 
             flightType.getAircraft().setCapabilities(capability);
-            //flight.setAircraft(aircraft);
         }
         catch(Exception e)
         {

@@ -19,9 +19,6 @@ public class FPLType18 implements IFPLType
         //---------------------- Field 18 ----------------------------------
         // Other Information
         //------------------------------------------------------------------
-        //System.out.println("other : " + map.get("OTHER"));
-
-        //if(map.get("OTHER") == null) return flightType;
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try
@@ -29,9 +26,7 @@ public class FPLType18 implements IFPLType
             String other = map.get("OTHER");
 
             Map<String, String> _map = FIXMUtils.getOtherMap(other);
-            //System.out.println("othermap: " + _map);
             String str = _map.get("PBN");
-            //System.out.println("PBN: " + str);
 
             if(str != null)
             {
@@ -43,16 +38,7 @@ public class FPLType18 implements IFPLType
                     PerformanceBasedNavigationCapabilityCodeType ptype = PerformanceBasedNavigationCapabilityCodeType.fromValue(s.trim());
                     if(ptype != null)
                     {
-                        //System.out.println("==========> " + flightType.getAircraft());
                         if(flightType.getAircraft() == null) flightType = createAircraft(flightType);
-                        /*
-                        {
-                            flightType = createAircraft(flightType);
-
-                            AircraftType aircraft = FIXMUtils.getFlightObjectFactory().createAircraftType();
-                            flightType.setAircraft(aircraft);
-                        }
-                        */
                         flightType.getAircraft().getCapabilities().getNavigation().getPerformanceBasedCode().add(ptype);
                     }
                 }
@@ -203,17 +189,7 @@ public class FPLType18 implements IFPLType
                     {}
                 }
             }
-
-            //String supp = map.get("SUPP");
-            //System.out.println(supp);
-
-            //if(supp == null) return flightType;
-
-            //_map = FIXMUtils.getOtherMap(supp);
-            //if(_map == null || _map.size() == 0) return flightType;
             str = _map.get("A"); // Aircraft Color
-            //System.out.println("map : " + _map + ", color : " + str);
-
             if(str != null)
             {
                 ColourCodeType[] colors = ColourCodeType.values();

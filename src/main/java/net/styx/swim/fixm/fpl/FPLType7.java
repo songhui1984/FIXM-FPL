@@ -17,8 +17,6 @@ public class FPLType7 implements IFPLType
         // -FIXM10
         //------------------------------------------------------------------
 
-        //if(map.get("ACID") == null && map.get("SSR MODE") == null) return flightType;
-
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try

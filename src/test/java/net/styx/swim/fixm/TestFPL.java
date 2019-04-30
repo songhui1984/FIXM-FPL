@@ -49,9 +49,6 @@ public class TestFPL
         sb.append(" TALT/OJAM RMK/TCAS EQUIPPED");
         sb.append("-A/WR C/PUBLIC, JOHN Q. E/0403 J/LF P/TBN R/UVE S/DMJ)");
 
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
-
         String xml = fplBuilder.buildMessage(sb.toString());
 
         System.out.println("------- FPL message 19 Message --------");
@@ -90,9 +87,6 @@ public class TestFPL
         sb.append(" LCCC0022 LTAA0106 LTBB0134 SEL/QRCS CODE/4BAA6F RVR/75 OPR/ABC");
         sb.append(" TALT/OJAM RMK/TCAS EQUIPPED");
         sb.append("-A/WR C/PUBLIC, JOHN Q. E/0403 J/LF P/TBN R/UVE S/DMJ)");
-
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
 
         String xml = fplBuilder.buildMessages(sb.toString());
 
@@ -133,9 +127,6 @@ public class TestFPL
         sb.append(" TALT/OJAM RMK/TCAS EQUIPPED");
         sb.append("-A/WR C/PUBLIC, JOHN Q. E/0403 J/LF P/TBN R/UVE S/DMJ)");
 
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
-
         String xml = fplBuilder.buildFlight(sb.toString());
 
         System.out.println("------- FPL message 19 --------");
@@ -168,9 +159,6 @@ public class TestFPL
         sb.append(" BIKF RMK/TCAS TURKMENISTAN GC943382151015 AFGHANISTAN");
         sb.append(" YA20622015 PAKISTAN HQCAA1088166ATNR)");
 
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
-
         String xml = fplBuilder.buildFlight(sb.toString());
 
         System.out.println("------- FPL message 5 --------");
@@ -195,9 +183,6 @@ public class TestFPL
         sb.append(" SEL/LREK RVR/075 OPR/ABC RMK/RADIO CALLSIGN ABCABCABC PERMIT");
         sb.append(" NUMBER");
         sb.append("-E/0204 P/TBN S/DM A/WHITE C/JOHN Q. PILOT)");
-
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
 
         String xml = fplBuilder.buildFlight(sb.toString());
 
@@ -229,10 +214,7 @@ public class TestFPL
         sb.append(" EGTT0831 EHAA0853 EBBU0908 EDGG0921 EDUU0921 SEL/FHAP");
         sb.append(" CODE/A14626 RVR/75 OPR/ABC PER/D RMK/TCAS)");
 
-// RASVO/N0470F230
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
-
+        // RASVO/N0470F230
         String xml = fplBuilder.buildFlight(sb.toString());
 
         System.out.println("------- FPL message 2 --------");
@@ -284,7 +266,6 @@ public class TestFPL
 
         while(matcher.find())
         {
-            //System.out.println(matcher.group());
             excludeFix.add(matcher.group());
         }
 

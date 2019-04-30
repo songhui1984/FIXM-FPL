@@ -31,9 +31,6 @@ public class TestCHG
         sb.append(" ORGN/ABC123 RVR/075 SUR/TCAS EQUIPPED RMK/RADIO CALLSIGN");
         sb.append(" ABCABCABC RMK/PERMIT NUMBER)");
 
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
-
         String xml = fplBuilder.buildFlight(sb.toString());
 
         System.out.println("---------------------------");
@@ -50,9 +47,6 @@ public class TestCHG
     public void testCHG8()
     {
         String str = "(CHG-FIXM04-LICJ1235-LICD-DOF/160130-16/LICD0101 LICJ LMML)";
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(str);
-
         String xml = fplBuilder.buildFlight(str);
 
         System.out.println("---------------------------");
@@ -73,9 +67,6 @@ public class TestCHG
         sb.append(" N621 SAM UN621 MARUK UM195 LORKU UN866 QPR UM30 IBISU/N0431F390");
         sb.append(" UM30 LOTEE DCT ABUPI/N0427F370 DCT CANAR DCT VIS DCT ABETO DCT");
         sb.append(" INBOM INBOM5A)");
-
-        //IFIXMFactory fplFactory = FIXMFactoryHelper.createFIXMFactory("FPL");
-        //IFIXMBuilder fplBuilder = fplFactory.createBuilder(sb.toString());
 
         String xml = fplBuilder.buildFlight(sb.toString());
 

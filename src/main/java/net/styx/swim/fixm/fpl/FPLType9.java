@@ -16,7 +16,6 @@ public class FPLType9 implements IFPLType
         //  Number and type of aircraft and wake turbulance category
         // A321/M
         //------------------------------------------------------------------
-        //if(map.get("NUM") == null && map.get("TYPE") == null && map.get("WTC") == null) return flightType;
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try

@@ -21,8 +21,6 @@ public class FPLType16 implements IFPLType
         // -LTBA0208 LTFJ LTAI
         //------------------------------------------------------------------
 
-        //if(map.get("ARR") == null && map.get("ALT") == null && map.get("ARRET") == null) return flightType;
-
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try

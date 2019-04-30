@@ -17,7 +17,6 @@ public class FPLType8 implements IFPLType
         // -IS
         //------------------------------------------------------------------
 
-        //if(map.get("RULES") == null && map.get("TYPEF") == null) return flightType;
         if(!FIXMUtils.isValid(map, flightType, items)) return flightType;
 
         try
