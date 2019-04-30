@@ -1,0 +1,66 @@
+<!-- MESSAGE 1 (FPL) -->
+<ns2:Flight xmlns="http://www.fixm.aero/base/4.1" xmlns:ns2="http://www.fixm.aero/flight/4.1" flightType="S" remarks="RMK/RADIO CALLSIGN ABCABCABC PERMIT NUMBER">
+    <ns2:aircraft registration="ABC123" wakeTurbulence="M">
+        <ns2:aircraftColours>
+            <colourCode>WHITE</colourCode>
+        </ns2:aircraftColours>
+        <ns2:aircraftType>
+            <ns2:type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:IcaoAircraftTypeReferenceType" icaoAircraftTypeDesignator="A320"/>
+        </ns2:aircraftType>
+        <ns2:capabilities standardCapabilities="STANDARD">
+            <ns2:communication selectiveCallingCode="LREK">
+                <ns2:communicationCapabilityCode>H V Y</ns2:communicationCapabilityCode>
+            </ns2:communication>
+            <ns2:navigation>
+                <ns2:navigationCapabilityCode>D F I L O W</ns2:navigationCapabilityCode>
+                <ns2:performanceBasedCode>B3 B4 B5 D3 D4</ns2:performanceBasedCode>
+            </ns2:navigation>
+            <ns2:surveillance otherSurveillanceCapabilities="TCAS EQUIPPED">
+                <ns2:surveillanceCapabilityCode>S</ns2:surveillanceCapabilityCode>
+            </ns2:surveillance>
+            <ns2:survival>
+                <ns2:survivalEquipmentType>DESERT MARITIME</ns2:survivalEquipmentType>
+            </ns2:survival>
+        </ns2:capabilities>
+    </ns2:aircraft>
+    <ns2:departure>
+        <ns2:aerodrome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IcaoAerodromeReferenceType" locationIndicator="LEMD"/>
+        <ns2:estimatedOffBlockTime timeReference="UTC">2016-01-31T07:45:00.000Z</ns2:estimatedOffBlockTime>
+    </ns2:departure>
+    <ns2:destination>
+        <ns2:aerodrome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IcaoAerodromeReferenceType" locationIndicator="LEMG"/>
+        <ns2:aerodromeAlternate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IcaoAerodromeReferenceType" locationIndicator="LEJR"/>
+        <ns2:aerodromeAlternate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IcaoAerodromeReferenceType" locationIndicator="LEGR"/>
+    </ns2:destination>
+    <ns2:filed>
+        <ns2:element>
+            <ns2:routeDesignatorToNextElement>
+                <ns2:routeDesignator>UN10</ns2:routeDesignator>
+            </ns2:routeDesignatorToNextElement>
+            <ns2:routePoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DesignatedPointOrNavaidType" designator="VTB"/>
+        </ns2:element>
+        <ns2:element>
+            <ns2:routeDesignatorToNextElement>
+                <ns2:routeDesignator>UN864</ns2:routeDesignator>
+            </ns2:routeDesignatorToNextElement>
+            <ns2:routePoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DesignatedPointOrNavaidType" designator="CRISA"/>
+        </ns2:element>
+        <ns2:element>
+            <ns2:routePoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DesignatedPointOrNavaidType" designator="VULPE"/>
+        </ns2:element>
+        <ns2:routeInformation flightRulesCategory="I" routeText="VTB UN10 CRISA UN864 VULPE " totalEstimatedElapsedTime="P0Y0M0DT0H51M0S">
+            <ns2:cruisingLevel>
+                <flightLevel uom="FL">310.0</flightLevel>
+            </ns2:cruisingLevel>
+            <ns2:cruisingSpeed uom="KT">450.0</ns2:cruisingSpeed>
+        </ns2:routeInformation>
+    </ns2:filed>
+    <ns2:flightIdentification aircraftIdentification="FIXM01"/>
+    <ns2:flightPlanOriginator name="ABCDEFGH"/>
+    <ns2:operator>
+        <operatingOrganization name="ABC"/>
+    </ns2:operator>
+    <ns2:supplementaryData fuelEndurance="P0Y0M0DT2H4M0S">
+        <ns2:pilotInCommand name="JOHN Q. PILOT"/>
+    </ns2:supplementaryData>
+</ns2:Flight>
