@@ -19,5 +19,5 @@ $ mvn assembly:assembly
 
 ### License
 
-**Free Software. Please do not change Package Name if possible**
+**This is Free Software. Please do not change Package Name if possible**
 
