@@ -19,5 +19,5 @@ $ mvn assembly:assembly
 
 ### License
 
-**Apache Licence 2.0 (https://www.apache.org/licenses/LICENSE-2.0)**
+**Free Software. Please do not change Package Name if possible**
 
