@@ -1,7 +1,7 @@
-# FIXM FPL marshaller/unmarshaller
+# FPL to FIXM Unmarshaller
 
 FIXM(Flight Infogmation Exchange Management) is a standard for exchanging Flight Information and is formed as XML(Extendable Markup Language).
-To send and receive FIXM data, user must be convert legacy FPL(Flight Plan) format to FIXM-compliant XML format or vice versa. This module enables developers to convert from TAC(Typical Alphabetic Code) to XML or vice versa.
+To send and receive FIXM data, user must be convert legacy FPL(Flight Plan) format to FIXM-compliant XML format. This module enables developers to convert from TAC(Typical Alphabetic Code) to XML.
 
 
 
